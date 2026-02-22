@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #050816, #000000);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ⭐ Stars Background */
+.stars, .twinkling {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:block;
+    z-index:-1;
+}
+
+.stars {
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: moveStars 200s linear infinite;
+}
+
+.twinkling {
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    animation: twinkle 2s infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes moveStars {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px;}
+}
+
+@keyframes twinkle {
+    from {opacity: 0.2;}
+    to {opacity: 0.6;}
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e0d4ff;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.hero button {
+    padding: 12px 30px;
+    background: #a56eff;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    box-shadow: 0 0 20px #a56eff;
+    transform: translateY(-3px);
+}
+
+/* Controls */
+.controls {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.controls input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 220px;
+    margin-right: 10px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #7b5cff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Glass Cards */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fact-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fact-card:hover {
+    border: 1px solid #b48dff;
+    box-shadow: 0 0 25px rgba(180,141,255,0.6);
+}
+
+.fact-card h3 {
+    margin-bottom: 10px;
+    color: #d6baff;
+}
+
+.card-buttons {
+    margin-top: 15px;
+}
+
+.card-buttons button {
+    margin-right: 8px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    border: none;
+    background: #a56eff;
+    color: white;
+    cursor: pointer;
+}
+
+/* Student Section */
+.student-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.student-section h2 {
+    color: #e0d4ff;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1 {font-size: 2rem;}
+}
